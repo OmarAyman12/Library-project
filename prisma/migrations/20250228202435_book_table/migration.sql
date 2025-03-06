@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Book" ALTER COLUMN "authorId" SET DATA TYPE TEXT,
+ALTER COLUMN "image" DROP NOT NULL;
