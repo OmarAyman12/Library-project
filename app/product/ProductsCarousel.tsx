@@ -6,8 +6,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { fetchAllProducts } from "@/utils/actions";
-import { IoThunderstormSharp } from "react-icons/io5";
 import { Book } from "@prisma/client";
 import Image from "next/image";
 function ProductsCarousel({ products }: { products: Book[] }) {
@@ -23,7 +21,7 @@ function ProductsCarousel({ products }: { products: Book[] }) {
               <div>
                 <Card>
                   <CardContent>
-                    <Image src="" alt={title} fill />
+                    <Image src={image} alt={title} fill />
                   </CardContent>
                 </Card>
               </div>

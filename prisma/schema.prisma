@@ -23,7 +23,7 @@ model Book {
   publishDate DateTime
   authorId    String     @default(uuid())
   authorName  String
-  image       String?
+  image       String
   price  Int
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
