@@ -18,7 +18,7 @@ function FormContainer({
 
   useEffect(() => {
     if (state.message) {
-      toast("Product Created");
+      toast(`${state.message}`);
     }
   }, [state]);
   return (

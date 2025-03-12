@@ -7,7 +7,7 @@ type FormInputProps = {
   name: string;
   type: string;
   label?: string;
-  defaultValue?: string;
+  defaultValue?: string | number | Date;
   placeholder?: string;
 };
 
@@ -24,11 +24,14 @@ function FormInput({
         {label || name}
       </Label>
       <Input
-
         type={type}
         name={name}
         id={name}
-        defaultValue={defaultValue}
+        defaultValue={
+          defaultValue instanceof Date
+            ? defaultValue.toISOString().split("T")[0]
+            : defaultValue
+        }
         placeholder={placeholder}
       />
     </div>

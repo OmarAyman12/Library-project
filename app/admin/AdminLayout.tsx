@@ -8,17 +8,12 @@ function AdminLayout() {
       <h1 className="pb-3">Admin Dashboard</h1>
       <div className="grid grid-cols-1 gap-y-3 max-w-3xs">
         <Button>
-          <Link href="/admin/product">Admin products</Link>
+          <Link href="/admin">Admin products</Link>
         </Button>
         <Button>
           <Link href="/admin/create">Add product</Link>
         </Button>
-        <Button>
-          <Link href="/admin/edit">Edit product</Link>
-        </Button>
-        <Button>
-          <Link href="/admin/edit">delete product</Link>
-        </Button>
+       
       </div>
     </div>
   );

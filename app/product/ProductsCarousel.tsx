@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import { Book } from "@prisma/client";
 import Image from "next/image";
+import Link from "next/link";
 function ProductsCarousel({ products }: { products: Book[] }) {
   return (
     <Carousel className="w-full max-w-xl flex mx-auto mt-12">
@@ -19,9 +20,19 @@ function ProductsCarousel({ products }: { products: Book[] }) {
           return (
             <CarouselItem key={id}>
               <div>
-                <Card>
-                  <CardContent>
-                    <Image src={image} alt={title} fill />
+                <Card className="">
+                  <CardContent className="w-full">
+                    <Link href={`/product/${String(id)}`}>
+                      <h1 className="text-center font-bold">{title}</h1>
+                      <Image
+                        src={image}
+                        alt={title}
+                        priority
+                        width={600}
+                        height={2}
+                        className="object-fill"
+                      />
+                    </Link>
                   </CardContent>
                 </Card>
               </div>

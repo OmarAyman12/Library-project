@@ -1,13 +1,18 @@
 import React from "react";
-import ProductsCarousel from "./ProductsCarousel";
+
 import { fetchAllProducts } from "@/utils/actions";
 
-async function ProductsPage() {
-  const products = await fetchAllProducts();
-  console.log(products);
+import ProductsLayout from "./ProductsLayout";
+
+async function ProductsPage({searchParams,}:{searchParams:{search?:string}}) {
+  const search= searchParams.search || "";
+  const products = await fetchAllProducts(search);
+
+ 
   return (
-    <div>
-      <ProductsCarousel products={products ?? []} />
+    <div className="m-4">
+      <h1 className="mb-3 text-center">Products Page</h1>
+      <ProductsLayout pageLayout="grid" search={search} />
     </div>
   );
 }
