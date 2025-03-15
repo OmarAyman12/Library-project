@@ -15,7 +15,7 @@ async function ProductsGrid({ products }: { products: Book[] }) {
         return (
           <div key={id} className="border w-fit relative group">
             <Link href={`/product/${id}`}>
-              <Image src={image} alt={title} width={300} height={12} priority />
+              <Image src={image} alt={title} width={300} height={130} priority />
             </Link>
             <div className="">
               <h1>{title}</h1>
